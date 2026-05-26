@@ -123,9 +123,10 @@ def verify_claims(payload: VerifyPayload):
             detail=f"An error occurred during verification: {str(e)}"
         )
 
-# if __name__ == "__main__":
-#     import uvicorn
-#     port = int(os.getenv("PORT", 8000))
-#     host = os.getenv("HOST", "0.0.0.0")
-#     logger.info(f"Starting server on {host}:{port}")
-#     uvicorn.run("backend.main:app", host=host, port=port, reload=True)
+if __name__ == "__main__":
+    import uvicorn
+    import os
+    port = int(os.getenv("PORT", 8000))
+    host = os.getenv("HOST", "0.0.0.0")
+    logger.info(f"Starting server on {host}:{port}")
+    uvicorn.run("main:app", host=host, port=port, reload=True)
