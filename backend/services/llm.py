@@ -11,6 +11,16 @@ logger = logging.getLogger("truthlayer.llm")
 # Primary model: Groq
 # Fallback model: Gemini
 
+
+# Temporary deployment debug logs
+try:
+    import groq
+    import httpx
+    logger.info(f"groq version: {groq.__version__}")
+    logger.info(f"httpx version: {httpx.__version__}")
+except Exception as e:
+    logger.warning(f"Could not log Groq/httpx versions: {e}")
+
 def generate_json_with_fallback(
     prompt: str,
     response_schema: Optional[Type[BaseModel]] = None,
