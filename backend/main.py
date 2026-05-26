@@ -17,8 +17,8 @@ logging.basicConfig(
 logger = logging.getLogger("truthlayer.main")
 
 # Import service layers
-from backend.services.extractor import extract_text_from_pdf, extract_claims_from_text
-from backend.services.verifier import verify_multiple_claims
+from services.extractor import extract_text_from_pdf, extract_claims_from_text
+from services.verifier import verify_multiple_claims
 
 app = FastAPI(
     title="TruthLayer AI Backend",
@@ -123,9 +123,9 @@ def verify_claims(payload: VerifyPayload):
             detail=f"An error occurred during verification: {str(e)}"
         )
 
-if __name__ == "__main__":
-    import uvicorn
-    port = int(os.getenv("PORT", 8000))
-    host = os.getenv("HOST", "0.0.0.0")
-    logger.info(f"Starting server on {host}:{port}")
-    uvicorn.run("backend.main:app", host=host, port=port, reload=True)
+# if __name__ == "__main__":
+#     import uvicorn
+#     port = int(os.getenv("PORT", 8000))
+#     host = os.getenv("HOST", "0.0.0.0")
+#     logger.info(f"Starting server on {host}:{port}")
+#     uvicorn.run("backend.main:app", host=host, port=port, reload=True)

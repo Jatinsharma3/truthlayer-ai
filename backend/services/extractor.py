@@ -2,7 +2,8 @@ import pypdf
 import logging
 import re
 from typing import List, Dict, Any
-from backend.services.llm import generate_json_with_fallback
+# from backend.services.llm import generate_json_with_fallback
+from services.llm import generate_json_with_fallback
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)

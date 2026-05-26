@@ -1,7 +1,9 @@
 import logging
 from typing import Dict, Any, List
-from backend.services.search import web_search
-from backend.services.llm import generate_json_with_fallback
+# from backend.services.search import web_search
+# from backend.services.llm import generate_json_with_fallback
+from services.search import web_search
+from services.llm import generate_json_with_fallback
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
